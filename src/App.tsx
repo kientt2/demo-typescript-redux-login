@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Container } from '@mui/material';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import PageDashboard from './pages/Dashboard';
+import PageLogin from './pages/PageLogin';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container maxWidth="sm">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<PageDashboard />} />
+            <Route path="login" element={<PageLogin />} />
+            <Route path="dashboard" element={<PageDashboard />} />
+          </Routes>
+        </BrowserRouter>
+      </Container>
     </div>
   );
 }

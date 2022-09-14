@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../redux/slice";
 import { useForm, SubmitHandler } from "react-hook-form"
+import { LoginCredentials } from "../redux/interface";
 
 type Inputs = {
   user: string,
@@ -12,7 +13,7 @@ type Inputs = {
 function PageLogin() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm<LoginCredentials>();
   const onSubmit: SubmitHandler<Inputs> = data => {
     if (true) {
       const {user} = data;
